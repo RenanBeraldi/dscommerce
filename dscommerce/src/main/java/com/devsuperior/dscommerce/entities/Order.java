@@ -11,7 +11,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant moment;
+
     private OrderStatus status;
 
     @ManyToOne
@@ -58,4 +60,6 @@ public class Order {
     public void setClient(User client) {
         this.client = client;
     }
+
+
 }
